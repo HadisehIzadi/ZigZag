@@ -5,7 +5,10 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
 	[Header("Elements")]
-    public int speed = 10;
+    public float speed ;
+    public float speedGainPerSecond;
+    public GameObject diamondVfx;
+    
     bool movingLeft = true;
     bool firstInput = true;
     
@@ -19,6 +22,9 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	
+    	
+    	
 		if (GameManager.instance.gameStarted) {
 			Move();
 			CheckInput();
@@ -33,6 +39,8 @@ public class CarController : MonoBehaviour
     
     void Move()
     {
+    	speed += speedGainPerSecond * Time.deltaTime;
+    	
     	transform.position += transform.forward * speed * Time.deltaTime;
     }
     
@@ -61,6 +69,16 @@ public class CarController : MonoBehaviour
     	{
     		transform.rotation  = Quaternion.Euler(0,0,0);
     		movingLeft = true;
+    	}
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+    	if(other.gameObject.tag == "Diamond")
+    	{
+    		Instantiate(diamondVfx , other.transform.position , diamondVfx.transform.rotation);
+    		Destroy(other.gameObject);
+    		GameManager.instance.IncreamentScore();
     	}
     }
 }

@@ -15,7 +15,8 @@ public class platformSpawner : MonoBehaviour
     void Start()
     {
     	lastPos = lastPlatform.position;
-    	StartCoroutine(spawnPlatform());
+    	//if(GameManager.instance.gameStarted)
+    		StartCoroutine(spawnPlatform());
     }
 
     // Update is called once per frame
