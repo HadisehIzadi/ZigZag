@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca4ebd08cde49a345978ac51f6202237
+guid: 82200d7f169510b47a21547a92e3ed10
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -27,18 +27,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: paintRed
-    second: {fileID: 2100000, guid: c58f6d7a94e1778408efadee905eda53, type: 2}
+      name: paintYellow
+    second: {fileID: 2100000, guid: 62a2ef0c6152eb941a4cc9a5c798c9c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: plastic
-    second: {fileID: 2100000, guid: 72b3a357a5beeb542b256b71cf3ba1f6, type: 2}
+    second: {fileID: 2100000, guid: 3ed4fd2cd1dc435468d8c37c809ee25a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wheelInside
-    second: {fileID: 2100000, guid: b117c2ae5f83ddb4487b52119090c0fb, type: 2}
+    second: {fileID: 2100000, guid: 3b0af98195a50ae4eadd2cc5cdaee279, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

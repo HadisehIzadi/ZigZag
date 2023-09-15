@@ -30,7 +30,7 @@ public class CarController : MonoBehaviour
 			CheckInput();
 		}
     	
-    	if(transform.position.y <= -2f){
+    	if(transform.position.y <= 0.3f){
     		GameManager.instance.GameOver();
     		Destroy(gameObject);
     	}

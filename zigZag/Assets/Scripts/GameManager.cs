@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 	public GameObject gameplayUI;
 	public GameObject mainMenuPanel;
 	
+	[SerializeField] GameObject[] Cars;
+	
 	[Header("Audios")]
 	AudioSource audioSource;
 	public AudioClip[] gameMusics;
@@ -35,6 +37,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    	SetSelectedcar();
+    	
+    	//PlayerPrefs.SetInt("HighScore" , 1000);
+
     	HighScore = PlayerPrefs.GetInt("HighScore");
     	HightscoreText.text = "Best score : " + HighScore;
     }
@@ -113,5 +119,25 @@ public class GameManager : MonoBehaviour
    	audioSource.PlayOneShot(gameMusics[2] , 0.2f);
    	score += 2;
    	scoreText.text = score.ToString();
+   }
+   
+   public void GoToshop()
+   {
+   	SceneManager.LoadScene("carShop");
+   }
+   
+   void SetSelectedcar()
+   {
+   	PlayerPrefs.GetInt("selectedCar" , 0);
+   	
+   	if(PlayerPrefs.GetInt("selectedCar") == 0){
+   		Cars[0].SetActive(true);
+   		return;}
+   	
+   	for(int i = 0 ; i < Cars.Length ; i++)
+   		Cars[i].SetActive(false);
+   	
+   		Cars[PlayerPrefs.GetInt("selectedCar") - 1].SetActive(true);
+   		
    }
 }

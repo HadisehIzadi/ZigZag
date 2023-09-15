@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamond: {fileID: 1990460353963274965, guid: 4b12d49cb35d8794abe954309d905115, type: 3}
+  isStartPlatform: 0
