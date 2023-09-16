@@ -13,8 +13,10 @@ public class LookAt : MonoBehaviour
     	
     	Debug.Log(" car to follow : " + PlayerPrefs.GetInt("selectedCar"));
     	//SetLookAt(Cars[PlayerPrefs.GetInt("selectedCar") - 1].transform);
-    	
-    	vcam.Follow = Cars[PlayerPrefs.GetInt("selectedCar") - 1].transform;
+    	if(PlayerPrefs.GetInt("selectedCar") == 0)
+    		vcam.Follow = Cars[0].transform;
+    	else
+    		vcam.Follow = Cars[PlayerPrefs.GetInt("selectedCar") - 1].transform;
     	
     }
 
@@ -24,8 +26,5 @@ public class LookAt : MonoBehaviour
         
     }
     
-    public void SetLookAt(Transform target)
-    {
-    	vcam.Follow = target;
-    }
+
 }

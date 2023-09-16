@@ -8,15 +8,21 @@ public class CarController : MonoBehaviour
     public float speed ;
     public float speedGainPerSecond;
     public GameObject diamondVfx;
-    
+    [SerializeField] GameObject tapText;
     bool movingLeft = true;
     bool firstInput = true;
+    
+    int diamondCount;
+
+
     
     
     // Start is called before the first frame update
     void Start()
     {
-        
+    	diamondCount = PlayerPrefs.GetInt("diamondCount" , 0);
+    	
+    	
     }
 
     // Update is called once per frame
@@ -30,7 +36,7 @@ public class CarController : MonoBehaviour
 			CheckInput();
 		}
     	
-    	if(transform.position.y <= 0.3f){
+    	if(transform.position.y <= -1f || transform.position.y >= 0.6f){
     		GameManager.instance.GameOver();
     		Destroy(gameObject);
     	}
@@ -49,6 +55,7 @@ public class CarController : MonoBehaviour
     	if(firstInput)
     	{
     		firstInput = false;
+    		tapText.SetActive(false);
     		return;
     	}
     	
@@ -76,6 +83,11 @@ public class CarController : MonoBehaviour
     {
     	if(other.gameObject.tag == "Diamond")
     	{
+    		
+    		diamondCount = PlayerPrefs.GetInt("diamondCount") + 1 ;
+    		PlayerPrefs.SetInt("diamondCount" , diamondCount);
+    		Debug.Log("diamons : " +PlayerPrefs.GetInt("diamondCount" , 0) );
+    		
     		Instantiate(diamondVfx , other.transform.position , diamondVfx.transform.rotation);
     		Destroy(other.gameObject);
     		GameManager.instance.IncreamentScore();
