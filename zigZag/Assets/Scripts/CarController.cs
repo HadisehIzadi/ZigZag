@@ -5,14 +5,15 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
 	[Header("Elements")]
-    public float speed ;
-    public float speedGainPerSecond;
-    public GameObject diamondVfx;
+    [SerializeField] float speed ;
+    [SerializeField] float speedGainPerSecond;
+    [SerializeField] GameObject diamondVfx;
     [SerializeField] GameObject tapText;
     bool movingLeft = true;
     bool firstInput = true;
     
     int diamondCount;
+    Vector3 lastPos;
 
 
     
@@ -37,8 +38,13 @@ public class CarController : MonoBehaviour
 		}
     	
     	if(transform.position.y <= -1f || transform.position.y >= 0.6f){
+//    		lastPos = transform.position;
+//    		Debug.Log("last pos = " + lastPos);
+//    		gameObject.SetActive(false);
+    		
     		GameManager.instance.GameOver();
     		Destroy(gameObject);
+    		
     	}
     }
     

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+    	//PlayerPrefs.DeleteAll();
         HighScore = PlayerPrefs.GetInt("HighScore");
     	HightscoreText.text = "Best score : " + HighScore;
     }

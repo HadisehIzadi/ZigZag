@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-	int diamonds;
+	
 	
 	[Header("CAR 1")]
 	[SerializeField] GameObject car1Canvas;
@@ -26,10 +27,17 @@ public class ShopManager : MonoBehaviour
 	[SerializeField] Button Buycar3Button;
 	[SerializeField] Button useCar3;
 	
+	[Header("ELEMENTS ")]
+	[SerializeField] TMP_Text diamondText;
 	[SerializeField] GameObject selectedText;
+	
+	int diamonds;
+	int diamondsCounts;
     // Start is called before the first frame update
     void Start()
     {
+    	diamondsCounts = PlayerPrefs.GetInt("diamondCount");
+    	diamondText.text = diamondsCounts.ToString();
     	
     	car1Canvas.SetActive(true);
     	

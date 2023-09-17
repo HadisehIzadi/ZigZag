@@ -11,7 +11,7 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int randomDiamond = Random.Range(0,7);
+        int randomDiamond = Random.Range(0,8);
         Vector3 diamondPos = transform.position;
         diamondPos.y += 1f;
         

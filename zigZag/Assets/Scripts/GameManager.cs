@@ -10,14 +10,16 @@ public class GameManager : MonoBehaviour
 	[Header("Elements")]
 	public static GameManager instance;
 	public bool gameStarted;
-	public GameObject platformSpawner;
-	public TMP_Text scoreText;
+	[SerializeField] GameObject platformSpawner;
+	[SerializeField] TMP_Text scoreText;
+	[SerializeField] TMP_Text GameOverscoreText;
 	//public TMP_Text HightscoreText;
-	public TMP_Text diamondText;
-	public GameObject gameplayUI;
-	public GameObject mainMenuPanel;
-	
+	[SerializeField] TMP_Text diamondText;
+	[SerializeField] GameObject gameplayUI;
+	[SerializeField] GameObject mainMenuPanel;
+	[SerializeField] GameObject gameOverPanel;
 	[SerializeField] GameObject[] Cars;
+	[SerializeField] CollerChanger collorChanger;
 	
 	[Header("Audios")]
 	AudioSource audioSource;
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
     	SetSelectedcar();
-    	
+    	collorChanger.enabled = true;
     	//PlayerPrefs.SetInt("HighScore" , 1000);
 
     	HighScore = PlayerPrefs.GetInt("HighScore");
@@ -80,17 +82,22 @@ public class GameManager : MonoBehaviour
    public void GameOver()
     {
     	gameStarted = false;
-    	platformSpawner.SetActive(false);
     	
+    	platformSpawner.SetActive(false);
+    	scoreText.gameObject.SetActive(false);
+    	collorChanger.enabled = false;
+    	GameOverscoreText.text = score.ToString();
     	StopCoroutine("updateScore");
     	saveHighScore();
-    	Invoke("ReloadScene" , 0.5f);
+    	gameOverPanel.SetActive(true);
+    	//Time.timeScale = 0f;
+    	//Invoke("ReloadScene" , 0.5f);
     	
     }
    
-   void ReloadScene()
+   public void ReloadScene()
    {
-   	SceneManager.LoadScene("Intro");
+   	SceneManager.LoadScene("Game");
    }
    
    IEnumerator updateScore()
@@ -133,6 +140,16 @@ public class GameManager : MonoBehaviour
    public void GoToshop()
    {
    	SceneManager.LoadScene("carShop");
+   }
+   
+   public void GoToMainMenue()
+   {
+   	SceneManager.LoadScene("Intro");
+   }
+   
+   public void Resume()
+   {
+   	
    }
    
    void SetSelectedcar()
