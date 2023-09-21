@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] GameObject mainMenuPanel;
 	[SerializeField] GameObject gameOverPanel;
 	[SerializeField] GameObject[] Cars;
-	[SerializeField] CollerChanger collorChanger;
+	[SerializeField] Camera mainCamera;
 	
 	[Header("Audios")]
 	AudioSource audioSource;
@@ -42,7 +42,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
     	SetSelectedcar();
-    	collorChanger.enabled = true;
+    	CollerChanger collorChanger = mainCamera.GetComponent<CollerChanger>();
+    	collorChanger.enabled = false;
     	//PlayerPrefs.SetInt("HighScore" , 1000);
 
     	HighScore = PlayerPrefs.GetInt("HighScore");
@@ -85,6 +86,8 @@ public class GameManager : MonoBehaviour
     	
     	platformSpawner.SetActive(false);
     	scoreText.gameObject.SetActive(false);
+    	
+    	CollerChanger collorChanger = mainCamera.GetComponent<CollerChanger>();
     	collorChanger.enabled = false;
     	GameOverscoreText.text = score.ToString();
     	StopCoroutine("updateScore");
@@ -135,6 +138,11 @@ public class GameManager : MonoBehaviour
    	audioSource.PlayOneShot(gameMusics[2] , 0.2f);
    	score += 2;
    	scoreText.text = score.ToString();
+   }
+   
+   public void playscaledSound()
+   {
+   	audioSource.PlayOneShot(gameMusics[3] , 0.2f);
    }
    
    public void GoToshop()

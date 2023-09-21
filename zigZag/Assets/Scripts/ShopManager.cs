@@ -30,6 +30,7 @@ public class ShopManager : MonoBehaviour
 	[Header("ELEMENTS ")]
 	[SerializeField] TMP_Text diamondText;
 	[SerializeField] GameObject selectedText;
+	[SerializeField] GameObject lowdiamonText;
 	
 	int diamonds;
 	int diamondsCounts;
@@ -93,15 +94,27 @@ public class ShopManager : MonoBehaviour
     	SceneManager.LoadScene("Intro");
     }
     
-    void ShowText()
+    void ShowSelectedText()
     {
     	selectedText.SetActive(true);
-    	Invoke("HideText" , 0.6f);
+    	Invoke("HideselectedText" , 0.6f);
     }
     
-    void HideText()
+    void HideselectedText()
     {
     	selectedText.SetActive(false);
+    }
+    
+    
+    void ShowDiamondText()
+    {
+    	lowdiamonText.SetActive(true);
+    	Invoke("HideDiamondText" , 0.6f);
+    }
+    
+    void HideDiamondText()
+    {
+    	lowdiamonText.SetActive(false);
     }
     
     //************** car 1 atribuites *****************
@@ -116,7 +129,7 @@ public class ShopManager : MonoBehaviour
     {
     	PlayerPrefs.SetInt("selectedCar" , 1);
     	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
-    	ShowText();
+    	ShowSelectedText();
     	//SceneManager.LoadScene("Intro");
     }
     
@@ -147,13 +160,18 @@ public class ShopManager : MonoBehaviour
     		PlayerPrefs.SetInt("diamondCount" , diamonds);
     		
     	}
+    	
+    	else
+    	{
+    		ShowDiamondText();
+    	}
     }
     
     public void SelectCar2()
     {
     	PlayerPrefs.SetInt("selectedCar" , 2);
     	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
-    	ShowText();
+    	ShowSelectedText();
     	//SceneManager.LoadScene("Intro");
     }
     
@@ -185,13 +203,18 @@ public class ShopManager : MonoBehaviour
     		PlayerPrefs.SetInt("diamondCount" , diamonds);
     		
     	}
+    	
+    	else
+    	{
+    		ShowDiamondText();
+    	}
     }
     
     public void SelectCar3()
     {
     	PlayerPrefs.SetInt("selectedCar" , 3);
     	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
-    	ShowText();
+    	ShowSelectedText();
     	
     	//SceneManager.LoadScene("Intro");
     }

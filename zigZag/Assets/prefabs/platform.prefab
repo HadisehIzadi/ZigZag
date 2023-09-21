@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7335763022461757592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 2.5, y: 1, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,4 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamond: {fileID: 1990460353963274965, guid: 4b12d49cb35d8794abe954309d905115, type: 3}
+  bigScaler: {fileID: 1693101007273920257, guid: f5adafe828b1fd949a9a97f7ab3bcbd6, type: 3}
+  litScaler: {fileID: 1693101007273920257, guid: dca1ed1c971fd2c4184bce95295beb97, type: 3}
   isStartPlatform: 0

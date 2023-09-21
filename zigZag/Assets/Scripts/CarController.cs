@@ -8,7 +8,10 @@ public class CarController : MonoBehaviour
     [SerializeField] float speed ;
     [SerializeField] float speedGainPerSecond;
     [SerializeField] GameObject diamondVfx;
+    [SerializeField] GameObject BigScalerVfx;
+    [SerializeField] GameObject litScalerVfx;
     [SerializeField] GameObject tapText;
+    [SerializeField] float Bigscalevalue;
     bool movingLeft = true;
     bool firstInput = true;
     
@@ -37,7 +40,7 @@ public class CarController : MonoBehaviour
 			CheckInput();
 		}
     	
-    	if(transform.position.y <= -1f || transform.position.y >= 0.6f){
+    	if(transform.position.y <= -1f || transform.position.y >= 1.2f){
 //    		lastPos = transform.position;
 //    		Debug.Log("last pos = " + lastPos);
 //    		gameObject.SetActive(false);
@@ -97,6 +100,26 @@ public class CarController : MonoBehaviour
     		Instantiate(diamondVfx , other.transform.position , diamondVfx.transform.rotation);
     		Destroy(other.gameObject);
     		GameManager.instance.IncreamentScore();
+    	}
+    	
+    	
+    	if(other.gameObject.tag == "BigScaler")
+    	{
+    		transform.localScale *= Bigscalevalue;
+    		Debug.Log("scale : " + transform.localScale);
+    		Instantiate(BigScalerVfx , other.transform.position , BigScalerVfx.transform.rotation);
+    		GameManager.instance.playscaledSound();
+    		Destroy(other.gameObject);
+    	}
+    	
+    	if(other.gameObject.tag == "litScaler")
+    	{
+
+    		transform.localScale /= Bigscalevalue;
+    		Debug.Log("scale : " + transform.localScale);
+    		Instantiate(litScalerVfx , other.transform.position , litScalerVfx.transform.rotation);
+    		GameManager.instance.playscaledSound();
+    		Destroy(other.gameObject);
     	}
     }
 }

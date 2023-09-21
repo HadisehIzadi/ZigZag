@@ -33,9 +33,9 @@ public class platformSpawner : MonoBehaviour
     	int rand = Random.Range(0,2);
     	
     	if(rand >0)
-    		newPos.x += 2f;
+    		newPos.x += 2.5f;
     	else
-    		newPos.z += 2f;
+    		newPos.z += 2.5f;
     }
     
     
