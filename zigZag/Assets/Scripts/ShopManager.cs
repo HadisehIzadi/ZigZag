@@ -31,6 +31,7 @@ public class ShopManager : MonoBehaviour
 	[SerializeField] TMP_Text diamondText;
 	[SerializeField] GameObject selectedText;
 	[SerializeField] GameObject lowdiamonText;
+	[SerializeField] Sprite offBuyButton;
 	
 	int diamonds;
 	int diamondsCounts;
@@ -42,18 +43,7 @@ public class ShopManager : MonoBehaviour
     	
     	car1Canvas.SetActive(true);
     	
-//    	if(PlayerPrefs.GetInt("car1sold") != 1) // hasnt bought car1 yet
-//    	{
-//    		Buycar1Button.interactable = true;
-//    		useCar1.interactable = false;
-//    	}
-//    	
-//    	else
-//    	{
-//     		Buycar1Button.interactable = false;
-//    		useCar1.interactable = true;
-//    	}
-    	
+
     	
     	if(PlayerPrefs.GetInt("car2sold") != 1) // hasnt bought car2 yet
     	{
@@ -63,6 +53,7 @@ public class ShopManager : MonoBehaviour
     	
     	else
     	{
+    		Buycar2Button.GetComponent<Image>().sprite  = offBuyButton;
     		Buycar2Button.interactable = false;
     		useCar2.interactable = true;
     	}
@@ -76,6 +67,7 @@ public class ShopManager : MonoBehaviour
     	
     	else
     	{
+    		Buycar3Button.GetComponent<Image>().sprite  = offBuyButton;
     		Buycar3Button.interactable = false;
     		useCar3.interactable = true;
     	}
@@ -91,7 +83,7 @@ public class ShopManager : MonoBehaviour
     //***********************************************
     public void BackToGame()
     {
-    	SceneManager.LoadScene("Intro");
+    	SceneManager.LoadScene("Game");
     }
     
     void ShowSelectedText()
@@ -155,6 +147,7 @@ public class ShopManager : MonoBehaviour
     	{
     		useCar2.interactable = true;
     		Buycar2Button.interactable = false;
+    		
     		PlayerPrefs.SetInt("car2sold" , 1);
     		diamonds = PlayerPrefs.GetInt("diamondCount") - car2amount;
     		PlayerPrefs.SetInt("diamondCount" , diamonds);
@@ -198,6 +191,7 @@ public class ShopManager : MonoBehaviour
     	{
     		useCar3.interactable = true;
     		Buycar3Button.interactable = false;
+    		Buycar3Button.GetComponent<Image>().sprite  = offBuyButton;
     		PlayerPrefs.SetInt("car3sold" , 1);
     		diamonds = PlayerPrefs.GetInt("diamondCount") - car3amount;
     		PlayerPrefs.SetInt("diamondCount" , diamonds);

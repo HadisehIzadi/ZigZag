@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] GameObject platformSpawner;
 	[SerializeField] TMP_Text scoreText;
 	[SerializeField] TMP_Text GameOverscoreText;
+	[SerializeField] TMP_Text HightscoreText;
 	//public TMP_Text HightscoreText;
 	[SerializeField] TMP_Text diamondText;
 	[SerializeField] GameObject gameplayUI;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
     	SetSelectedcar();
     	CollerChanger collorChanger = mainCamera.GetComponent<CollerChanger>();
-    	collorChanger.enabled = false;
+    	collorChanger.enabled = true;
     	//PlayerPrefs.SetInt("HighScore" , 1000);
 
     	HighScore = PlayerPrefs.GetInt("HighScore");
@@ -93,6 +94,8 @@ public class GameManager : MonoBehaviour
     	StopCoroutine("updateScore");
     	saveHighScore();
     	gameOverPanel.SetActive(true);
+    	HighScore = PlayerPrefs.GetInt("HighScore");
+    	HightscoreText.text = "Best score : " + HighScore;
     	//Time.timeScale = 0f;
     	//Invoke("ReloadScene" , 0.5f);
     	
@@ -135,7 +138,7 @@ public class GameManager : MonoBehaviour
    
    public void IncreamentScore()
    {
-   	audioSource.PlayOneShot(gameMusics[2] , 0.2f);
+   	audioSource.PlayOneShot(gameMusics[2] , 0.1f);
    	score += 2;
    	scoreText.text = score.ToString();
    }

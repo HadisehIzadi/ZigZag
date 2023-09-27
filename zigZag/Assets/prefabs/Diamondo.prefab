@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 640dc2f025ee433489ca50d9f685de47, type: 2}
+  - {fileID: 2100000, guid: d3fdd53a2b5dd904fad8d824266a4cad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   rotationSpeed: 10
   floatSpeed: 0.04
   floatRate: 0.5
-  startScale: {x: 1, y: 1, z: 1}
-  endScale: {x: 1.5, y: 1.5, z: 1.5}
+  startScale: {x: 0.3, y: 0.3, z: 0.3}
+  endScale: {x: 0.5, y: 0.5, z: 0.5}
   scaleSpeed: 1
   scaleRate: 0.5
 --- !u!135 &-4655402717589411632
