@@ -249,7 +249,7 @@ MonoBehaviour:
   m_text: buy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: be7a366f155670645aeca87a331c33af, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.5
+  m_fontSize: 48.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -732,7 +732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 63d9ae459cbe2944e902cdd5256fca48, type: 2}
+  - {fileID: 2100000, guid: a5ab27f24d140594197755b8c9ee7179, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_text: select
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: be7a366f155670645aeca87a331c33af, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.7
+  m_fontSize: 47
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_text: 80
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: be7a366f155670645aeca87a331c33af, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: df98c7b6fdffe314a8d1bf846e4e63ca, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.25
+  m_fontSize: 42.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

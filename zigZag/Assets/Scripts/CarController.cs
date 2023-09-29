@@ -44,8 +44,10 @@ public class CarController : MonoBehaviour
 //    		lastPos = transform.position;
 //    		Debug.Log("last pos = " + lastPos);
 //    		gameObject.SetActive(false);
-    		
+
+    		Handheld.Vibrate();
     		GameManager.instance.GameOver();
+    		
     		Destroy(gameObject);
     		
     	}
