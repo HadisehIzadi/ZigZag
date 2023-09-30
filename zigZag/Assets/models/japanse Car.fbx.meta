@@ -3,7 +3,67 @@ guid: 55f6ddb898c58f24da26c5428c64e469
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 57e279cb3cc19ed4881d256f1378bab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 0128f96dc6b37cf479670f91ef737003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: d6a51553faff61e49bde0106f406fe5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 7fd31f20e67e45448925040b2d46c79c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 2b96626f8c494fc43b4cebaebe76cdad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lamp body
+    second: {fileID: 2100000, guid: 97088aae5f5172548a08b2d3d39621d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lampe
+    second: {fileID: 2100000, guid: fe63b8efeaf8bd24886a6c06be14dad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light orange
+    second: {fileID: 2100000, guid: 825a2f402760cc643b888da37d10e6f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light red
+    second: {fileID: 2100000, guid: fb6fa32c5a450b248a7b6289d458da34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light yellow
+    second: {fileID: 2100000, guid: db616e5ddce61f04cb0ad3d3b84a249d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: line
+    second: {fileID: 2100000, guid: 660f176d51547164aaa452d13fbd6547, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shield
+    second: {fileID: 2100000, guid: 28328d5f3463dcd4aa0f5e47500083de, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

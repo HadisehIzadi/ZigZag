@@ -3,7 +3,87 @@ guid: 89a9a48ce4b5519469bb2a5e16df4803
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: ab84dd241465e8c4ea78084ebdeb8f48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: e6fd9dc29deceaf478a4e2f9e1e5ac07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 234fdbcbc4798b94cb0d9b0be6847510, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b3819e8497dd61b4e804d7a9c614abc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 5f813b05749580e4f88cbdc1349d127f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 563a7df3d1c5b8c4f94aa96c9b8df68c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: e414b22bc12d2bb4e8d0a54d10b871b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 82dd49ddd3779fe4fbb9e105cc2b94a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: a788ad18bded2ae499fdc41a6ca973cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bodylamp
+    second: {fileID: 2100000, guid: 6a4a28e62b046f7409f7d8eaf77da881, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: ee6c9515028496a4697f16504115ad21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orang lamp
+    second: {fileID: 2100000, guid: 4fca12a15c148034891524bb262d12bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: redlamp
+    second: {fileID: 2100000, guid: 876f246086ead324ab841051ef65b06a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shield
+    second: {fileID: 2100000, guid: 706e5ddd6f393eb44973ef42688d7336, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellow lamp
+    second: {fileID: 2100000, guid: 72788bd87b8a2284b8914b093df192b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellowlamp
+    second: {fileID: 2100000, guid: e315045aef17e3f458af484b93788008, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

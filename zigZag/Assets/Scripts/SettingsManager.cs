@@ -7,17 +7,19 @@ public class SettingsManager : MonoBehaviour
 	[SerializeField] private Sprite optionsOnSprite;
     [SerializeField] private Sprite optionsOffSprite;
     [SerializeField] private Image soundsButtonImage;
-    [SerializeField] private Image musicButtonImage;
+    [SerializeField] private Image HapticButtonImage;
     
     [SerializeField] private AudioSource IntroAudios;
     
     [Header(" Settings ")]
     private bool soundsState = true;
+    private bool HapticState = true;
    
     
     private void Awake()
     {
         soundsState = PlayerPrefs.GetInt("sounds", 1) == 1;
+        HapticState = PlayerPrefs.GetInt("Vibrate", 1) == 1;
        
     }
     	
@@ -39,12 +41,13 @@ public class SettingsManager : MonoBehaviour
             EnableSounds();
         else
             DisableSounds();
+        
+        if (HapticState)
+            EnableHaptic();
+        else
+            DisableHaptic();
 
 
-       // if (musicState)
-            //EnableMusic();
-       // else
-          //  DisableMusic();
     }
     
     
@@ -81,6 +84,40 @@ public class SettingsManager : MonoBehaviour
         AudioListener.volume = 1f;
     	PlayerPrefs.SetInt("sounds", 1);
     	//IntroAudios.volume = 1;
+
+    }
+    
+    
+ // **************************************************
+    
+    
+   public void ChangeHapticState()
+    {
+        if (HapticState)
+            DisableHaptic();
+        else
+            EnableHaptic();
+
+        HapticState = !HapticState;
+
+
+    }
+    
+    public void DisableHaptic()
+    {
+    	
+        HapticButtonImage.sprite = optionsOffSprite;
+    	PlayerPrefs.SetInt("Vibrate", 0);
+
+
+    }
+
+    public void EnableHaptic()
+    {
+
+        HapticButtonImage.sprite = optionsOnSprite;
+    	PlayerPrefs.SetInt("Vibrate", 1);
+
 
     }
 }
