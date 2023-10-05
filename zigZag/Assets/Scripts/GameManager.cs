@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] GameObject gameOverPanel;
 	[SerializeField] GameObject[] Cars;
 	[SerializeField] Camera mainCamera;
-	
+	[SerializeField] AdManager adManager;
 	[Header("Audios")]
 	AudioSource audioSource;
 	public AudioClip[] gameMusics;
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     	HighScore = PlayerPrefs.GetInt("HighScore");
     	//HightscoreText.text = "Best score : " + HighScore;
+    	adManager.Request();
     }
 
     // Update is called once per frame

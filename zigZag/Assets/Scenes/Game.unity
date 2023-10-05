@@ -257,6 +257,7 @@ MonoBehaviour:
   litScalerVfx: {fileID: 56058296465446127, guid: e7dc49e1a730d1d43947a6e965efdb88, type: 3}
   tapText: {fileID: 367418960}
   Bigscalevalue: 1.12
+  adManager: {fileID: 650265482}
 --- !u!1 &90618411
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +966,7 @@ GameObject:
   - component: {fileID: 650265479}
   - component: {fileID: 650265481}
   - component: {fileID: 650265480}
+  - component: {fileID: 650265482}
   m_Layer: 5
   m_Name: Gameover Panel
   m_TagString: Untagged
@@ -1036,6 +1038,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650265478}
   m_CullTransparentMesh: 1
+--- !u!114 &650265482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650265478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e624a30448e9024a8f2066fde0e7cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interstitialVideo: 651d3a4a31a26c187c8fe865
 --- !u!1 &693496010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1510,7 @@ MonoBehaviour:
   litScalerVfx: {fileID: 56058296465446127, guid: e7dc49e1a730d1d43947a6e965efdb88, type: 3}
   tapText: {fileID: 367418960}
   Bigscalevalue: 1.12
+  adManager: {fileID: 650265482}
 --- !u!54 &817613291
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2160,6 +2176,7 @@ MonoBehaviour:
   litScalerVfx: {fileID: 56058296465446127, guid: e7dc49e1a730d1d43947a6e965efdb88, type: 3}
   tapText: {fileID: 367418960}
   Bigscalevalue: 1.12
+  adManager: {fileID: 650265482}
 --- !u!54 &1079437507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3347,6 +3364,7 @@ MonoBehaviour:
   - {fileID: 2021511634}
   - {fileID: 90473806}
   mainCamera: {fileID: 963194227}
+  adManager: {fileID: 650265482}
   gameMusics:
   - {fileID: 8300000, guid: fea3384786726f94183a9ec208b4f6ef, type: 3}
   - {fileID: 8300000, guid: 849d02df06ec52b448e0583203bf8174, type: 3}
@@ -3516,6 +3534,7 @@ MonoBehaviour:
   litScalerVfx: {fileID: 56058296465446127, guid: e7dc49e1a730d1d43947a6e965efdb88, type: 3}
   tapText: {fileID: 367418960}
   Bigscalevalue: 1.12
+  adManager: {fileID: 650265482}
 --- !u!1 &2051683033
 GameObject:
   m_ObjectHideFlags: 0

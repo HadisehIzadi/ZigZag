@@ -12,6 +12,7 @@ public class CarController : MonoBehaviour
     [SerializeField] GameObject litScalerVfx;
     [SerializeField] GameObject tapText;
     [SerializeField] float Bigscalevalue;
+    [SerializeField] AdManager adManager;
     bool movingLeft = true;
     bool firstInput = true;
     
@@ -47,6 +48,7 @@ public class CarController : MonoBehaviour
 
 			if(PlayerPrefs.GetInt("Vibrate") == 1)
 	    		Handheld.Vibrate();
+			adManager.Show();
     		GameManager.instance.GameOver();
     		
     		Destroy(gameObject);
