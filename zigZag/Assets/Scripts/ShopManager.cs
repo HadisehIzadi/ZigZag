@@ -28,11 +28,23 @@ public class ShopManager : MonoBehaviour
 	[SerializeField] Button useCar3;
 	
 	
-	[Header("CAR 3")]
+	[Header("CAR 4")]
 	[SerializeField] GameObject car4Canvas;
 	[SerializeField] int car4amount;
 	[SerializeField] Button Buycar4Button;
 	[SerializeField] Button useCar4;
+	
+	[Header("CAR 5")]
+	[SerializeField] GameObject car5Canvas;
+	[SerializeField] int car5amount;
+	[SerializeField] Button Buycar5Button;
+	[SerializeField] Button useCar5;
+	
+	[Header("CAR 6")]
+	[SerializeField] GameObject car6Canvas;
+	[SerializeField] int car6amount;
+	[SerializeField] Button Buycar6Button;
+	[SerializeField] Button useCar6;
 	
 	[Header("ELEMENTS ")]
 	[SerializeField] TMP_Text diamondText;
@@ -94,12 +106,41 @@ public class ShopManager : MonoBehaviour
     		useCar4.interactable = true;
     	}
     	
+     	//**************** car 5 ********************************
+    	 if(PlayerPrefs.GetInt("car5sold") != 1) // hasnt bought car3 yet
+    	{
+    		Buycar5Button.interactable = true;
+    		useCar5.interactable = false;
+    	}
+    	
+    	else
+    	{
+    		Buycar5Button.GetComponent<Image>().sprite  = offBuyButton;
+    		Buycar5Button.interactable = false;
+    		useCar5.interactable = true;
+    	}
+
+
+    	//**************** car 6 ********************************
+    	 if(PlayerPrefs.GetInt("car6sold") != 1) // hasnt bought car3 yet
+    	{
+    		Buycar6Button.interactable = true;
+    		useCar6.interactable = false;
+    	}
+    	
+    	else
+    	{
+    		Buycar6Button.GetComponent<Image>().sprite  = offBuyButton;
+    		Buycar6Button.interactable = false;
+    		useCar6.interactable = true;
+    	}    	
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        diamondsCounts = PlayerPrefs.GetInt("diamondCount");
+    	diamondText.text = diamondsCounts.ToString();
     }
     
     //***********************************************
@@ -240,7 +281,11 @@ public class ShopManager : MonoBehaviour
     
 //************** car 4 atribuites *****************
 
-
+public void Car4Next()
+    {
+    	car4Canvas.SetActive(false);
+    	car5Canvas.SetActive(true);
+    }
 	public void car4Back()
 	{
 		car3Canvas.SetActive(true);
@@ -271,6 +316,92 @@ public class ShopManager : MonoBehaviour
     public void SelectCar4()
     {
     	PlayerPrefs.SetInt("selectedCar" , 4);
+    	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
+    	ShowSelectedText();
+    	
+    	//SceneManager.LoadScene("Intro");
+    }
+    
+    
+    
+    
+    //************** car 5 atribuites *****************
+
+public void Car5Next()
+    {
+    	car5Canvas.SetActive(false);
+    	car6Canvas.SetActive(true);
+    }
+	public void car5Back()
+	{
+		car4Canvas.SetActive(true);
+		car5Canvas.SetActive(false);
+	}
+    
+    public void Buycar5()
+    {
+    	//Debug.Log("high score : " + PlayerPrefs.GetInt("diamondCount"));
+    	
+    	if(car5amount  <= PlayerPrefs.GetInt("diamondCount"))
+    	{
+    		useCar5.interactable = true;
+    		Buycar5Button.interactable = false;
+    		Buycar5Button.GetComponent<Image>().sprite  = offBuyButton;
+    		PlayerPrefs.SetInt("car5sold" , 1);
+    		diamonds = PlayerPrefs.GetInt("diamondCount") - car4amount;
+    		PlayerPrefs.SetInt("diamondCount" , diamonds);
+    		
+    	}
+    	
+    	else
+    	{
+    		ShowDiamondText();
+    	}
+    }
+    
+    public void SelectCar5()
+    {
+    	PlayerPrefs.SetInt("selectedCar" , 5);
+    	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
+    	ShowSelectedText();
+    	
+    	//SceneManager.LoadScene("Intro");
+    }
+    
+    
+    
+    //************** car 6 atribuites *****************
+
+	public void car6Back()
+	{
+		car5Canvas.SetActive(true);
+		car6Canvas.SetActive(false);
+	}
+    
+    public void Buycar6()
+    {
+    	//Debug.Log("high score : " + PlayerPrefs.GetInt("diamondCount"));
+    	
+    	if(car6amount  <= PlayerPrefs.GetInt("diamondCount"))
+    	{
+    		useCar6.interactable = true;
+    		Buycar6Button.interactable = false;
+    		Buycar6Button.GetComponent<Image>().sprite  = offBuyButton;
+    		PlayerPrefs.SetInt("car6sold" , 1);
+    		diamonds = PlayerPrefs.GetInt("diamondCount") - car4amount;
+    		PlayerPrefs.SetInt("diamondCount" , diamonds);
+    		
+    	}
+    	
+    	else
+    	{
+    		ShowDiamondText();
+    	}
+    }
+    
+    public void SelectCar6()
+    {
+    	PlayerPrefs.SetInt("selectedCar" , 6);
     	Debug.Log("selected car : " + PlayerPrefs.GetInt("selectedCar"));
     	ShowSelectedText();
     	

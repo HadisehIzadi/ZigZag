@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using TapsellPlusSDK;
 public class UIManager : MonoBehaviour
 {
 	[SerializeField] TMP_Text HightscoreText;
@@ -13,20 +12,13 @@ public class UIManager : MonoBehaviour
 	[SerializeField] GameObject settingsPanel;
 	
 	[SerializeField] SettingsManager settingManager;
-	
-	
-	private const string TapsellPlusKey = "pcpfgieflgeltaifpfreikajhlsdhabocghnfejqerhqhitppepgmlfghnohfokteqmcti";
+
 	
 	int HighScore;
 
     void Start()
     {
-    	    	Debug.Log("ad added");
-        TapsellPlus.Initialize(TapsellPlusKey,
-            adNetworkName => Debug.Log(adNetworkName + " Initialized Successfully."),
-            error => Debug.Log(error.ToString()));
-        TapsellPlus.SetGdprConsent(true);
-        TapsellPlus.SetDebugMode(3);
+
         
         
     	//PlayerPrefs.DeleteAll();
