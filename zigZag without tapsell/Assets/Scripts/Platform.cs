@@ -9,9 +9,12 @@ public class Platform : MonoBehaviour
 	[SerializeField] GameObject bigScaler;
 	[SerializeField] GameObject litScaler;
 	[SerializeField] bool isStartPlatform = false;
+//	[SerializeField] Color[] platformColors;
 	bool isDiamond = false;
 	bool isBigScaler = false;
 	bool isSmalScaler = false;
+	
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,8 @@ public class Platform : MonoBehaviour
         
         Vector3 diamondPos = transform.position;
         diamondPos.y += 1f;
+        
+        
         
 
         
@@ -48,11 +53,16 @@ public class Platform : MonoBehaviour
         	
         
     }
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+//    	int colNumber = GameManager.instance.GetScore() / 10;
+//    	if(colNumber >= 2 )
+//    	ChangePlatformColor(0);
+//    	else if(colNumber >= 3 )
+//    	ChangePlatformColor(4);
     }
     
     void Fall()
@@ -71,4 +81,13 @@ public class Platform : MonoBehaviour
     		Invoke("Fall" , 0.2f);
     	}
     }
+    
+//    void ChangePlatformColor(int colNum)
+//    {
+//    	
+//    	
+//    		this.GetComponent<Renderer>().material.color = platformColors[colNum];
+//    		
+//    	
+//    }
 }

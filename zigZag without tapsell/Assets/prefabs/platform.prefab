@@ -131,3 +131,9 @@ MonoBehaviour:
   bigScaler: {fileID: 1693101007273920257, guid: f5adafe828b1fd949a9a97f7ab3bcbd6, type: 3}
   litScaler: {fileID: 1693101007273920257, guid: dca1ed1c971fd2c4184bce95295beb97, type: 3}
   isStartPlatform: 0
+  platformColors:
+  - {r: 0.011764706, g: 0.11764706, b: 0.48235294, a: 1}
+  - {r: 0.8679245, g: 0.3797762, b: 0.05322181, a: 1}
+  - {r: 0.8018868, g: 0.17777678, b: 0.5652737, a: 1}
+  - {r: 0.7830189, g: 0.07133526, b: 0.018467424, a: 1}
+  - {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 1}
